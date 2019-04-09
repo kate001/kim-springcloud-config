@@ -12,9 +12,13 @@ spring:
       name: kim-springcloud-config-eureka-client
 eureka:
  client:
+  fetch-registry: false
+  register-with-eureka: false
   serviceUrl:
     defaultZone: http://admin:admin@localhost:7001/eureka
   register-with-eureka: false
+
+  
 
 info:
   app.name: kim-springcloud-config-eureka-client-dev
