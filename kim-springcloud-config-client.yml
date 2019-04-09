@@ -1,0 +1,40 @@
+spring:
+   profiles:
+      active:
+        - dev
+---
+server:
+  port: 8201
+
+spring:
+  profiles: dev
+  application:
+      name: kim-springcloud-config-test-client1
+
+eureka:
+ client:
+  serviceUrl:
+    defaultZone: http://admin:admin@localhost:7301/eureka
+  register-with-eureka: false
+
+info:
+  app.name: kim-springcloud-config-client-dev1
+  company.name: kim3
+---
+server:
+  port: 8102
+
+spring:
+  profiles: beta
+  application:
+      name: kim-springcloud-config-test-client2
+
+eureka:
+ client:
+  serviceUrl:
+    defaultZone: http://admin:admin@localhost:7301/eureka
+  register-with-eureka: false
+  
+info:
+  app.name: kim-springcloud-config-client-beta2
+  company.name: kim2
