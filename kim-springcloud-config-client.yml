@@ -9,7 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-      name: kim-springcloud-config-test-client1
+      name: kim-springcloud-config-client
 
 eureka:
  client:
@@ -18,8 +18,8 @@ eureka:
   register-with-eureka: false
 
 info:
-  app.name: kim-springcloud-config-client-dev1
-  company.name: kim3
+  app.name: kim-springcloud-config-client-dev
+  company.name: kim
 ---
 server:
   port: 8102
