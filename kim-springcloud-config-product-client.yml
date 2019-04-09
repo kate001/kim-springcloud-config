@@ -25,6 +25,8 @@ logging:
 
 eureka:
   client: 
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
       defaultZone: http://admin:admin@localhost:7001/eureka
   instance:
@@ -69,6 +71,8 @@ logging:
 
 eureka:
   client: 
+    fetch-registry: false
+    register-with-eureka: false
     service-url:
       defaultZone: http://admin:admin@localhost:7002/eureka
   instance:
