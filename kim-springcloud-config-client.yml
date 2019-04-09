@@ -9,7 +9,7 @@ server:
 spring:
   profiles: dev
   application:
-      name: kim-springcloud-config-client111
+      name: kim-springcloud-config-client
 
 eureka:
  client:
