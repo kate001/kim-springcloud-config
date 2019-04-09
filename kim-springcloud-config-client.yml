@@ -18,7 +18,7 @@ eureka:
   register-with-eureka: false
 
 info:
-  app.name: kim-springcloud-config-client-dev1
+  app.name: kim-springcloud-config-client-dev
   company.name: kim
 ---
 server:
