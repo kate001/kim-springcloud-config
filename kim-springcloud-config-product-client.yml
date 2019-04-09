@@ -1,0 +1,90 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+ port: 8080
+mybatis:
+ mapper-locations: 
+ - classpath:mapping/*.xml
+spring:
+ datasource:
+   type: com.alibaba.druid.pool.DruidDataSource 
+   driver-class-name: com.mysql.jdbc.Driver 
+   url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8 
+   username: root 
+   password: root 
+ application:
+   name: kim-springcloud-config-product-client
+ profiles: dev
+
+logging:
+  level:
+    com.kim.mapper: debug
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://admin:admin@localhost:7001/eureka
+  instance:
+    instance-id: kim-springcloud-config-product-client
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 
+    lease-expiration-duration-in-seconds: 5  
+
+info:
+  app.name: kim-springcloud-provider-product
+  company.name: kim
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+        
+---
+server:
+ port: 8081
+mybatis:
+ mapper-locations: 
+ - classpath:mapping/*.xml
+spring:
+ datasource:
+   type: com.alibaba.druid.pool.DruidDataSource 
+   driver-class-name: com.mysql.jdbc.Driver 
+   url: jdbc:mysql://localhost:3306/springcloud?serverTimezone=GMT%2B8 
+   username: root 
+   password: root 
+ application:
+   name: kim-springcloud-config-product-client
+ profiles: beta
+
+logging:
+  level:
+    com.kim.mapper: debug
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://admin:admin@localhost:7002/eureka
+  instance:
+    instance-id: kim-springcloud-config-product-client
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 2 
+    lease-expiration-duration-in-seconds: 5  
+
+info:
+  app.name: kim-springcloud-config-product-client
+  company.name: kim
+  build.artifactId: $project.artifactId$
+  build.modelVersion: $project.modelVersion$
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
