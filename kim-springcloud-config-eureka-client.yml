@@ -1,0 +1,48 @@
+spring:
+  profiles:
+    active:
+      - dev
+---
+server:
+  port: 7001
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 1000
+    enable-self-preservation: false
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin@localhost:7001/eureka
+  instance: 
+    hostname: localhost 
+spring:
+  profiles: dev
+  security:
+    user:
+      name: admin
+      password: admin
+  application:
+    name: kim-springcloud-config-eureka-client
+---
+server:
+  port: 7002
+eureka:
+  server:
+    eviction-interval-timer-in-ms: 1000
+    enable-self-preservation: false
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://admin:admin@localhost:7002/eureka
+  instance: 
+    hostname: localhost 
+spring:
+  profiles: beta
+  security:
+    user:
+      name: admin
+      password: admin
+  application:
+    name: kim-springcloud-config-eureka-client
