@@ -2,13 +2,11 @@ spring:
   profiles:
     active:
     - dev
-		
 ---
 spring:
   profiles: dev
   application:
     name: kim-springcloud-config-test-dev
-		
 ---
 spring:
   profiles: default
