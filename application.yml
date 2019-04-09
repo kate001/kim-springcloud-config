@@ -6,7 +6,7 @@ spring:
 spring:
   profiles: dev
   application:
-    name: kim-springcloud-config-test-devv
+    name: kim-springcloud-config-test-dev
 ---
 spring:
   profiles: default
