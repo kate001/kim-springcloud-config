@@ -16,8 +16,6 @@ eureka:
   register-with-eureka: false
   serviceUrl:
     defaultZone: http://admin:admin@localhost:7001/eureka
-  register-with-eureka: false
-
   
 
 info:
